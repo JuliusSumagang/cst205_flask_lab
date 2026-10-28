@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ student_name }}'s Favorite Acronym</title>
+    {% if use_bootstrap %}
+        {{ bootstrap.load_css() }}
+    {% endif %}
+</head>
+<body>
+    <main class="container py-4">
+        <h1>{{ student_name }}'s Favorite Acronym</h1>
+        <p>{{ acronym }}</p>
+
+        {% if show_image %}
+        <div class="text-center">
+            <img src="{{ image_url }}" class="rounded w-50" alt="{{ image_alt }}">
+        </div>
+        {% endif %}
+    </main>
+    {% if use_bootstrap %}
+        {{ bootstrap.load_js() }}
+    {% endif %}
+</body>
+</html>
